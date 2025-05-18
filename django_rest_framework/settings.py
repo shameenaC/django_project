@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(5&%so8^=2jf-n21o8q+o(_rg6aj)(6c&g4@%lo64ifk@@60cv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-project-qj7b.onrender.com']
 
 
 # Application definition
@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+DATABASES["default"] = dj_database_url.parse("postgresql://backend_django_render_3la4_user:q0eTZRQh9gb3vVTYZ2kreje0PAnBetAG@dpg-d0ksb5l6ubrc73bifp0g-a.oregon-postgres.render.com/backend_django_render_3la4")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
